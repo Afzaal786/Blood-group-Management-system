@@ -1,0 +1,8 @@
+﻿<Application x:Class="BB_Project.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Insert Blood Group.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

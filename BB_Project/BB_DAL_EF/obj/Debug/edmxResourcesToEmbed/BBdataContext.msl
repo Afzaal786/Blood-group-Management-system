@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Blood_BankModelStoreContainer" CdmEntityContainer="BBdataContext">
+    <EntitySetMapping Name="Blood_Group">
+      <EntityTypeMapping TypeName="Blood_BankModel.Blood_Group">
+        <MappingFragment StoreEntitySet="Blood_Group">
+          <ScalarProperty Name="B_Id" ColumnName="B_Id" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Blood_BankModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="Blood_BankModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="Doc_Id" ColumnName="Doc_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_Donor">
+      <EntityTypeMapping TypeName="Blood_BankModel.Doctor_Donor">
+        <MappingFragment StoreEntitySet="Doctor_Donor">
+          <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+          <ScalarProperty Name="Donor_ID" ColumnName="Donor_ID" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_Receiver">
+      <EntityTypeMapping TypeName="Blood_BankModel.Doctor_Receiver">
+        <MappingFragment StoreEntitySet="Doctor_Receiver">
+          <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+          <ScalarProperty Name="Receiver_ID" ColumnName="Receiver_ID" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="Blood_BankModel.Donor">
+        <MappingFragment StoreEntitySet="Donor">
+          <ScalarProperty Name="Do_Id" ColumnName="Do_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Blood_ID" ColumnName="Blood_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receivers">
+      <EntityTypeMapping TypeName="Blood_BankModel.Receiver">
+        <MappingFragment StoreEntitySet="Receiver">
+          <ScalarProperty Name="R_Id" ColumnName="R_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Blood_ID" ColumnName="Blood_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

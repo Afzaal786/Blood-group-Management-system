@@ -1,0 +1,20 @@
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.dll.config
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.pdb
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.xml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.csprojResolveAssemblyReference.cache
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.pdb
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.dll.config
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\BB_DAL_EF.pdb
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.xml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.csprojResolveAssemblyReference.cache
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_DAL_EF\obj\Debug\BB_DAL_EF.pdb

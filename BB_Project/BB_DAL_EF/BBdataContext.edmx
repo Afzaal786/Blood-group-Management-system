@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Blood_BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blood_Group">
+          <Key>
+            <PropertyRef Name="B_Id" />
+          </Key>
+          <Property Name="B_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Group_Name" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="C_Id" />
+          </Key>
+          <Property Name="C_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City_Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Doc_Id" />
+          </Key>
+          <Property Name="Doc_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fath_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="CNIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Contact_No" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="C_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor_Donor">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+            <PropertyRef Name="Donor_ID" />
+            <PropertyRef Name="Date_Time" />
+          </Key>
+          <Property Name="Doctor_ID" Type="int" Nullable="false" />
+          <Property Name="Donor_ID" Type="int" Nullable="false" />
+          <Property Name="Date_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor_Receiver">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+            <PropertyRef Name="Receiver_ID" />
+            <PropertyRef Name="Date_Time" />
+          </Key>
+          <Property Name="Doctor_ID" Type="int" Nullable="false" />
+          <Property Name="Receiver_ID" Type="int" Nullable="false" />
+          <Property Name="Date_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="Do_Id" />
+          </Key>
+          <Property Name="Do_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fath_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="CNIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Contact_No" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="City_ID" Type="int" Nullable="false" />
+          <Property Name="Blood_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="R_Id" />
+          </Key>
+          <Property Name="R_Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fath_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="CNIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Contact_No" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="City_ID" Type="int" Nullable="false" />
+          <Property Name="Blood_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Doctor_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="C_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Donor_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Doctor_Donor" Type="Self.Doctor_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Doc_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Donor">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Donor_Donor">
+          <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+          <End Role="Doctor_Donor" Type="Self.Doctor_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donor">
+              <PropertyRef Name="Do_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Donor">
+              <PropertyRef Name="Donor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Receiver_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Doctor_Receiver" Type="Self.Doctor_Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Doc_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Receiver">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Receiver_Receiver">
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+          <End Role="Doctor_Receiver" Type="Self.Doctor_Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receiver">
+              <PropertyRef Name="R_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Receiver">
+              <PropertyRef Name="Receiver_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Blood_Group">
+          <End Role="Blood_Group" Type="Self.Blood_Group" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Group">
+              <PropertyRef Name="B_Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="Blood_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="City_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_Blood_Group">
+          <End Role="Blood_Group" Type="Self.Blood_Group" Multiplicity="1" />
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Group">
+              <PropertyRef Name="B_Id" />
+            </Principal>
+            <Dependent Role="Receiver">
+              <PropertyRef Name="Blood_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Receiver">
+              <PropertyRef Name="City_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Blood_BankModelStoreContainer">
+          <EntitySet Name="Blood_Group" EntityType="Self.Blood_Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor_Donor" EntityType="Self.Doctor_Donor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor_Receiver" EntityType="Self.Doctor_Receiver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donor" EntityType="Self.Donor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receiver" EntityType="Self.Receiver" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Doctor_City" Association="Self.FK_Doctor_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Donor_Doctor" Association="Self.FK_Doctor_Donor_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Doctor_Donor" EntitySet="Doctor_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Donor_Donor" Association="Self.FK_Doctor_Donor_Donor">
+            <End Role="Donor" EntitySet="Donor" />
+            <End Role="Doctor_Donor" EntitySet="Doctor_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Receiver_Doctor" Association="Self.FK_Doctor_Receiver_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Doctor_Receiver" EntitySet="Doctor_Receiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Receiver_Receiver" Association="Self.FK_Doctor_Receiver_Receiver">
+            <End Role="Receiver" EntitySet="Receiver" />
+            <End Role="Doctor_Receiver" EntitySet="Doctor_Receiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Blood_Group" Association="Self.FK_Donor_Blood_Group">
+            <End Role="Blood_Group" EntitySet="Blood_Group" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_City" Association="Self.FK_Donor_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_Blood_Group" Association="Self.FK_Receiver_Blood_Group">
+            <End Role="Blood_Group" EntitySet="Blood_Group" />
+            <End Role="Receiver" EntitySet="Receiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_City" Association="Self.FK_Receiver_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Receiver" EntitySet="Receiver" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Blood_BankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Blood_Group">
+          <Key>
+            <PropertyRef Name="B_Id" />
+          </Key>
+          <Property Name="B_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Group_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Donors" Relationship="Self.FK_Donor_Blood_Group" FromRole="Blood_Group" ToRole="Donor" />
+          <NavigationProperty Name="Receivers" Relationship="Self.FK_Receiver_Blood_Group" FromRole="Blood_Group" ToRole="Receiver" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="C_Id" />
+          </Key>
+          <Property Name="C_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctor_City" FromRole="City" ToRole="Doctor" />
+          <NavigationProperty Name="Donors" Relationship="Self.FK_Donor_City" FromRole="City" ToRole="Donor" />
+          <NavigationProperty Name="Receivers" Relationship="Self.FK_Receiver_City" FromRole="City" ToRole="Receiver" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Doc_Id" />
+          </Key>
+          <Property Name="Doc_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fath_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CNIC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contact_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="C_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Doctor_City" FromRole="Doctor" ToRole="City" />
+          <NavigationProperty Name="Doctor_Donor" Relationship="Self.FK_Doctor_Donor_Doctor" FromRole="Doctor" ToRole="Doctor_Donor" />
+          <NavigationProperty Name="Doctor_Receiver" Relationship="Self.FK_Doctor_Receiver_Doctor" FromRole="Doctor" ToRole="Doctor_Receiver" />
+        </EntityType>
+        <EntityType Name="Doctor_Donor">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+            <PropertyRef Name="Donor_ID" />
+            <PropertyRef Name="Date_Time" />
+          </Key>
+          <Property Name="Doctor_ID" Type="Int32" Nullable="false" />
+          <Property Name="Donor_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Doctor_Donor_Doctor" FromRole="Doctor_Donor" ToRole="Doctor" />
+          <NavigationProperty Name="Donor" Relationship="Self.FK_Doctor_Donor_Donor" FromRole="Doctor_Donor" ToRole="Donor" />
+        </EntityType>
+        <EntityType Name="Doctor_Receiver">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+            <PropertyRef Name="Receiver_ID" />
+            <PropertyRef Name="Date_Time" />
+          </Key>
+          <Property Name="Doctor_ID" Type="Int32" Nullable="false" />
+          <Property Name="Receiver_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Doctor_Receiver_Doctor" FromRole="Doctor_Receiver" ToRole="Doctor" />
+          <NavigationProperty Name="Receiver" Relationship="Self.FK_Doctor_Receiver_Receiver" FromRole="Doctor_Receiver" ToRole="Receiver" />
+        </EntityType>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="Do_Id" />
+          </Key>
+          <Property Name="Do_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fath_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CNIC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contact_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="City_ID" Type="Int32" Nullable="false" />
+          <Property Name="Blood_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Blood_Group" Relationship="Self.FK_Donor_Blood_Group" FromRole="Donor" ToRole="Blood_Group" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Donor_City" FromRole="Donor" ToRole="City" />
+          <NavigationProperty Name="Doctor_Donor" Relationship="Self.FK_Doctor_Donor_Donor" FromRole="Donor" ToRole="Doctor_Donor" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="R_Id" />
+          </Key>
+          <Property Name="R_Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fath_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CNIC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contact_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="City_ID" Type="Int32" Nullable="false" />
+          <Property Name="Blood_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Blood_Group" Relationship="Self.FK_Receiver_Blood_Group" FromRole="Receiver" ToRole="Blood_Group" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Receiver_City" FromRole="Receiver" ToRole="City" />
+          <NavigationProperty Name="Doctor_Receiver" Relationship="Self.FK_Doctor_Receiver_Receiver" FromRole="Receiver" ToRole="Doctor_Receiver" />
+        </EntityType>
+        <Association Name="FK_Donor_Blood_Group">
+          <End Role="Blood_Group" Type="Self.Blood_Group" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Group">
+              <PropertyRef Name="B_Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="Blood_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_Blood_Group">
+          <End Role="Blood_Group" Type="Self.Blood_Group" Multiplicity="1" />
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Group">
+              <PropertyRef Name="B_Id" />
+            </Principal>
+            <Dependent Role="Receiver">
+              <PropertyRef Name="Blood_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="C_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="City_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="C_Id" />
+            </Principal>
+            <Dependent Role="Receiver">
+              <PropertyRef Name="City_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Donor_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Doctor_Donor" Type="Self.Doctor_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Doc_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Donor">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Receiver_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+          <End Role="Doctor_Receiver" Type="Self.Doctor_Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Doc_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Receiver">
+              <PropertyRef Name="Doctor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Donor_Donor">
+          <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+          <End Role="Doctor_Donor" Type="Self.Doctor_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donor">
+              <PropertyRef Name="Do_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Donor">
+              <PropertyRef Name="Donor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Receiver_Receiver">
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+          <End Role="Doctor_Receiver" Type="Self.Doctor_Receiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receiver">
+              <PropertyRef Name="R_Id" />
+            </Principal>
+            <Dependent Role="Doctor_Receiver">
+              <PropertyRef Name="Receiver_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BBdataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blood_Group" EntityType="Self.Blood_Group" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+          <EntitySet Name="Doctor_Donor" EntityType="Self.Doctor_Donor" />
+          <EntitySet Name="Doctor_Receiver" EntityType="Self.Doctor_Receiver" />
+          <EntitySet Name="Donors" EntityType="Self.Donor" />
+          <EntitySet Name="Receivers" EntityType="Self.Receiver" />
+          <AssociationSet Name="FK_Donor_Blood_Group" Association="Self.FK_Donor_Blood_Group">
+            <End Role="Blood_Group" EntitySet="Blood_Group" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_Blood_Group" Association="Self.FK_Receiver_Blood_Group">
+            <End Role="Blood_Group" EntitySet="Blood_Group" />
+            <End Role="Receiver" EntitySet="Receivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_City" Association="Self.FK_Doctor_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Doctor" EntitySet="Doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_City" Association="Self.FK_Donor_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_City" Association="Self.FK_Receiver_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Receiver" EntitySet="Receivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Donor_Doctor" Association="Self.FK_Doctor_Donor_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Doctor_Donor" EntitySet="Doctor_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Receiver_Doctor" Association="Self.FK_Doctor_Receiver_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Doctor_Receiver" EntitySet="Doctor_Receiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Donor_Donor" Association="Self.FK_Doctor_Donor_Donor">
+            <End Role="Donor" EntitySet="Donors" />
+            <End Role="Doctor_Donor" EntitySet="Doctor_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Receiver_Receiver" Association="Self.FK_Doctor_Receiver_Receiver">
+            <End Role="Receiver" EntitySet="Receivers" />
+            <End Role="Doctor_Receiver" EntitySet="Doctor_Receiver" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Blood_BankModelStoreContainer" CdmEntityContainer="BBdataContext">
+          <EntitySetMapping Name="Blood_Group">
+            <EntityTypeMapping TypeName="Blood_BankModel.Blood_Group">
+              <MappingFragment StoreEntitySet="Blood_Group">
+                <ScalarProperty Name="B_Id" ColumnName="B_Id" />
+                <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="Blood_BankModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+                <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="Blood_BankModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="Doc_Id" ColumnName="Doc_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor_Donor">
+            <EntityTypeMapping TypeName="Blood_BankModel.Doctor_Donor">
+              <MappingFragment StoreEntitySet="Doctor_Donor">
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+                <ScalarProperty Name="Donor_ID" ColumnName="Donor_ID" />
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor_Receiver">
+            <EntityTypeMapping TypeName="Blood_BankModel.Doctor_Receiver">
+              <MappingFragment StoreEntitySet="Doctor_Receiver">
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+                <ScalarProperty Name="Receiver_ID" ColumnName="Receiver_ID" />
+                <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donors">
+            <EntityTypeMapping TypeName="Blood_BankModel.Donor">
+              <MappingFragment StoreEntitySet="Donor">
+                <ScalarProperty Name="Do_Id" ColumnName="Do_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+                <ScalarProperty Name="Blood_ID" ColumnName="Blood_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receivers">
+            <EntityTypeMapping TypeName="Blood_BankModel.Receiver">
+              <MappingFragment StoreEntitySet="Receiver">
+                <ScalarProperty Name="R_Id" ColumnName="R_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Fath_Name" ColumnName="Fath_Name" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+                <ScalarProperty Name="Blood_ID" ColumnName="Blood_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

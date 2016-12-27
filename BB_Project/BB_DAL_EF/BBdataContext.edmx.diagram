@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="feabe7b9f75d4dfdb0d998a166fb61ef" Name="Diagram1">
+        <EntityTypeShape EntityType="Blood_BankModel.Blood_Group" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.City" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.Doctor" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.Doctor_Donor" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.Doctor_Receiver" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.Donor" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Blood_BankModel.Receiver" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="Blood_BankModel.FK_Donor_Blood_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Receiver_Blood_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Doctor_City" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Donor_City" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Receiver_City" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Doctor_Donor_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Doctor_Receiver_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Doctor_Donor_Donor" ManuallyRouted="false" />
+        <AssociationConnector Association="Blood_BankModel.FK_Doctor_Receiver_Receiver" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="BB_Project.Insert_Doctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Insert_Doctor" Height="428.571" Width="509.774">
+    <Grid>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="131,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="DOB:" HorizontalAlignment="Left" Margin="138,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gender:" HorizontalAlignment="Left" Margin="127,234,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact no:" HorizontalAlignment="Left" Margin="107,188,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="120,274,0,0" VerticalAlignment="Top"/>
+        <Label Content="Father Name:" HorizontalAlignment="Left" Margin="95,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="CNIC:" HorizontalAlignment="Left" Margin="138,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="City:" HorizontalAlignment="Left" Margin="142,315,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="265,37,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="265,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="265,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="265,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

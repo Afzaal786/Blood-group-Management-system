@@ -1,0 +1,11 @@
+﻿<Window x:Class="BB_Project.Insert_Blood_Group"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Insert Blood Group" Height="245.865" Width="498.496" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="btn_BG_Save" Content="Save" HorizontalAlignment="Left" Margin="277,110,0,0" VerticalAlignment="Top" Width="75" Click="btn_BG_Save_Click"/>
+        <Label Content="Blood Group:" HorizontalAlignment="Left" Margin="105,52,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="232,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

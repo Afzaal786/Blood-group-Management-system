@@ -1,0 +1,44 @@
+c:\users\gohar ali\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\BB_Project.exe.config
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\BB_Project.exe
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\BB_Project.pdb
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.csprojResolveAssemblyReference.cache
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\MainWindow.baml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\MainWindow.g.cs
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\App.g.cs
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project_MarkupCompile.cache
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.g.resources
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.Properties.Resources.resources
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.csproj.GenerateResource.Cache
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.exe
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\BB_Project.pdb
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\BB_DAL_EF.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\EntityFramework.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\BB_DAL_EF.pdb
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\EntityFramework.xml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\Insert Blood Group.baml
+C:\Users\GOHAR ALI\documents\visual studio 2013\Projects\BB_Project\BB_Project\obj\Debug\Insert Blood Group.g.cs
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\BB_Project.exe.config
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.exe
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.pdb
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\BB_Project.exe
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\BB_Project.pdb
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\BB_DAL_EF.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\EntityFramework.dll
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\BB_DAL_EF.pdb
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\bin\Debug\EntityFramework.xml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.csprojResolveAssemblyReference.cache
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\Insert Blood Group.baml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\Insert Doctor.baml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\MainWindow.baml
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\Insert Blood Group.g.cs
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\Insert Doctor.g.cs
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\MainWindow.g.cs
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\App.g.cs
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project_MarkupCompile.cache
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.g.resources
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.Properties.Resources.resources
+C:\Users\afzaal\Desktop\C#\BB_Project\BB_Project\BB_Project\obj\Debug\BB_Project.csproj.GenerateResource.Cache
